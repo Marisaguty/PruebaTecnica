@@ -2,24 +2,7 @@ export class LoginPage{
     clickRegistrar(){
         cy.get('.sc-erijoS').click()
     }
-    rellenarNombre(name){
-        cy.get('.sc-dDPqvT > :nth-child(1) > .sc-jTjUTQ').type(name)
-    }
-    rellenarApellido(lastName){
-        cy.get('.sc-dDPqvT > :nth-child(2) > .sc-jTjUTQ').type(lastName)
-    }
-    rellenarEmail(email){
-        cy.get(':nth-child(3) > .sc-jTjUTQ').type(email)
-    }
-    rellenarContraseña(pass){
-        cy.get('.sc-hixjlP > .ehrPVE > .sc-jTjUTQ').type(pass)
-    }
-    clickPoliticaPrivacidad(){
-        cy.get('.sc-cbfGDZ > .sc-GKYbw > .sc-eGugkK > .sc-csDkEv').click()
-    }
-    clickContinuar(){
-        cy.get('.sc-dDPqvT > .sc-lllmON').click()
-    }
+   
     comprobarMensajeError(text){
         cy.get('.dQMWCA > :nth-child(2)').contains(text)
     }

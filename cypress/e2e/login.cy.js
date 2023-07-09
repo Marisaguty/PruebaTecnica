@@ -15,7 +15,7 @@ describe('Test login', () => {
   it('Login correcto', () =>{
    
     loginPage.rellenarLoginEmail('mgutyper@gmail.com')
-    loginPage.rellenarContraseña('12345678mg')
+    loginPage.rellenarLoginContraseña('12345678mg')
     loginPage.clickIniciarSesion()
     mainPage.clickCuentaLogado()
     accountPage.comprobarMiCuenta('Mis datos')

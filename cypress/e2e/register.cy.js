@@ -1,20 +1,25 @@
 import { MainPage } from "../page-object/main"
+import { RegisterPage } from "../page-object/register";
+import { LoginPage } from "../page-object/login";
 
-describe('Test login', () => {
+describe('Test register', () => {
   const mainPage = new MainPage();
+  const registerPage = new RegisterPage();
+  const loginPage = new LoginPage();
   beforeEach(()=>{
     mainPage.navegarPaginaPrincipal()
     mainPage.aceptarCookies()
   })
   it('Crear cuenta', () => {
     mainPage.clickCuenta()
-    mainPage.clickRegistrar()
-    mainPage.rellenarNombre('Marisa')
-    mainPage.rellenarApellido('Gutierrez')
-    mainPage.rellenarEmail('mgutyper@gmail.com')
-    mainPage.rellenarContraseña('12345678mg')
-    mainPage.clickPoliticaPrivacidad()
-    mainPage.clickContinuar()
+    loginPage.clickRegistrar()
+    registerPage.rellenarNombre('Marisa')
+    registerPage.rellenarApellido('Gutierrez')
+    registerPage.rellenarEmail('marisaguty@outlook.com')
+    registerPage.rellenarContraseña('12345678mg')
+    registerPage.clickPoliticaPrivacidad()
+    registerPage.clickContinuar()
+    registerPage.comprobarMensajeBienvenida("Muchas gracias, . Tu cuenta en Safeguru ha sido activada.")
   })
   
   
