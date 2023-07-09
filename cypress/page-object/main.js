@@ -1,4 +1,7 @@
 export class MainPage{
+    aceptarCookies(){
+        cy.get('.cf3Tgk > .cf2L3T > .cf2Lf6 > .cf1y60').click()
+    }
     navegarPaginaPrincipal(){
         cy.visit('https://www.safeguru.com')
     }
@@ -11,15 +14,14 @@ export class MainPage{
         
     }
     comprobarResultadoBusqueda(text){
-        cy.wait(10000)  /* no me sale */
-        cy.get('[data-projection-id="120"] > a > .link-wrapper > .text-wrapper').contains(text)
+        cy.get('article[id="calzado-de-seguridad-toworkfor-urban-s3-src-esd"]').contains(text)
     }
     seleccionarProducto(){
         cy.get('article[id="calzado-de-seguridad-toworkfor-brake"]').click();
     }
     abrirDesplegableTallaZapato(number){
         cy.get('.sc-kLKKgF').click()
-        cy.get('.sc-eYGnOm > :nth-child(5)').contains(number).click()
+        cy.get('input-product-id-unit-42')
         cy.get('button[name="Add unit"]').click() /* no funciona */
         
     }
@@ -39,36 +41,10 @@ export class MainPage{
         cy.get('.nav-links > :nth-child(3) > a').click()
         
     }
-    clickRegistrar(){
-        cy.get('.sc-erijoS').click()
+    clickCuentaLogado(){
+        cy.get('.nav-links > :nth-child(3) > button').click()
     }
-    rellenarNombre(name){
-        cy.get('.sc-dDPqvT > :nth-child(1) > .sc-jTjUTQ').type(name)
-    }
-    rellenarApellido(lastName){
-        cy.get('.sc-dDPqvT > :nth-child(2) > .sc-jTjUTQ').type(lastName)
-    }
-    rellenarEmail(email){
-        cy.get(':nth-child(3) > .sc-jTjUTQ').type(email)
-    }
-    rellenarContraseña(pass){
-        cy.get('.sc-hixjlP > .ehrPVE > .sc-jTjUTQ').type(pass)
-    }
-    clickPoliticaPrivacidad(){
-        cy.get('.sc-cbfGDZ > .sc-GKYbw > .sc-eGugkK > .sc-csDkEv').click()
-    }
-    clickContinuar(){
-        cy.get('.sc-dDPqvT > .sc-lllmON').click()
-    }
-    rellenarLoginEmail(email){
-        cy.get('.sc-hixjlP > .iAqfve > .sc-jTjUTQ').type(email)
-    }
-    rellenarLoginContraseña(pass){
-        cy.get('.sc-hixjlP > .ehrPVE > .sc-jTjUTQ').type(pass)
-    }
-    clickIniciarSesion(){
-        cy.get('.sc-hixjlP > .sc-lllmON > div').click();
-    }
+   
    /*  cerrarSesion(text){
         cy.get('.nav-links > :nth-child(3) > button').click()
         cy.get('.sc-a65312e0-2 > .sc-a65312e0-0 > .sidebar > .options-menu > :nth-child(5) > .option-menu').contains(text).click()
@@ -77,16 +53,8 @@ export class MainPage{
         cy.get('.nav-links > :nth-child(3) > button').click()
         cy.get(':nth-child(3) > .sc-jTjUTQ').type(number)
     } */ /* no me  funciona */
-    clickOlvidarContraseña(){
-        cy.get(':nth-child(4) > .sc-eZceyY').click()
-    }
-    rellenarRecuperarContraseña(email){
-        cy.get('.inputContainer > .sc-bTTELM > .sc-jTjUTQ').type(email)
-    }
-    clickEnviarEmail(){
-        cy.get('.sc-ddKZzx > .buttons > :nth-child(1)').click()
-        cy.get('.sc-dYBPgv > .sc-lllmON').click()
-    }
+    
+
     /* Catalogo */
 
    /*  catalogoPaso1(){

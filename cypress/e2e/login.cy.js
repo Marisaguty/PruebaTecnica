@@ -1,44 +1,50 @@
 import { MainPage } from "../page-object/main"
+import { LoginPage } from "../page-object/login";
+import {AccountPage} from "../page-object/account"
 
 describe('Test login', () => {
   const mainPage = new MainPage();
+  const loginPage = new LoginPage();
+  const accountPage = new AccountPage();
   beforeEach(()=>{
     mainPage.navegarPaginaPrincipal()
+    mainPage.aceptarCookies()
+    mainPage.clickCuenta()
   })
-  /* it('Crear cuenta', () => {
-    mainPage.clickCuenta()
-    mainPage.clickRegistrar()
-    mainPage.rellenarNombre('Marisa')
-    mainPage.rellenarApellido('Gutierrez')
-    mainPage.rellenarEmail('mgutyper@gmail.com')
-    mainPage.rellenarContraseña('12345678mg')
-    mainPage.clickPoliticaPrivacidad()
-    mainPage.clickContinuar()
-  }) */
-  /* it('Login correcto y añadir telefono', () =>{
-    mainPage.clickCuenta()
-    mainPage.rellenarLoginEmail('mgutyper@gmail.com')
-    mainPage.rellenarContraseña('12345678mg')
-    mainPage.clickIniciarSesion()
-    // mainPage.cerrarSesion('Cerrar sesión') 
-    // mainPage.añadirTelefono('666666666') 
-  }) */
+  
+  it('Login correcto', () =>{
+   
+    loginPage.rellenarLoginEmail('mgutyper@gmail.com')
+    loginPage.rellenarContraseña('12345678mg')
+    loginPage.clickIniciarSesion()
+    mainPage.clickCuentaLogado()
+    accountPage.comprobarMiCuenta('Mis datos')
 
-  /* it('Login contraseña incorrecta y cambiar contraseña', ()=>{
-    mainPage.clickCuenta()
-    mainPage.rellenarLoginEmail('mgutyper@gmail.com')
-    mainPage.rellenarLoginContraseña('jdahdadiahd')
-    mainPage.clickIniciarSesion()
-    mainPage.clickOlvidarContraseña()
-    mainPage.rellenarRecuperarContraseña('mgutyper@gmail.com')
-    mainPage.clickEnviarEmail()
-  }) */
+ 
+  })
+
+  it('Login contraseña incorrecta', ()=>{
+  
+    loginPage.rellenarLoginEmail('mgutyper@gmail.com')
+    loginPage.rellenarLoginContraseña('jdahdadiahd')
+    loginPage.clickIniciarSesion()
+    loginPage.comprobarMensajeError("Ha introducido una contraseña o dirección de correo incorrecta")
+
+  })
 
   it('Login email incorrecto', ()=>{
-    mainPage.clickCuenta()
-    mainPage.rellenarLoginEmail('dasdisd@gmail.com')
-    mainPage.rellenarLoginContraseña('12345678mg')
-    mainPage.clickIniciarSesion()
+   
+    loginPage.rellenarLoginEmail('mgutgfper@gmail.com')
+    loginPage.rellenarLoginContraseña('12345678mg')
+    loginPage.clickIniciarSesion()
+    loginPage.comprobarMensajeError("Ha introducido una contraseña o dirección de correo incorrecta")
+   
+  })
+
+  it('Cambiar contraseña', ()=>{
+    loginPage.clickOlvidarContraseña()
+    loginPage.rellenarRecuperarContraseña('mgutyper@gmail.com')
+    loginPage.clickEnviarEmail()
   })
   
 })

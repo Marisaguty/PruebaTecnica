@@ -1,22 +1,22 @@
 import { MainPage } from "../page-object/main";
 
-describe('Test login', () => {
+describe('Test Busqueda', () => {
     const mainPage = new MainPage();
     beforeEach(()=>{
       mainPage.navegarPaginaPrincipal()
+      mainPage.aceptarCookies()
     })
    
     it('Busqueda Simple', ()=>{
         mainPage.clickarCampoBusqueda()
         mainPage.escribirBusqueda('calzado')
-        /* mainPage.comprobarResultadoBusqueda('calzado') */
+        mainPage.comprobarResultadoBusqueda('calzado')
+       /*  mainPage.seleccionarProducto()
+        mainPage.abrirDesplegableTallaZapato()
+        mainPage.tramitarPedido("mgutyper@gmail.com", "12345678mg") */
 
     })
 
-    it('Añadir producto al carrito', ()=>{
-        mainPage.seleccionarProducto()
-        mainPage.abrirDesplegableTallaZapato(42)
-        mainPage.tramitarPedido("mgutyper@gmail.com", "12345678mg")
-    })
+    
     
   })
