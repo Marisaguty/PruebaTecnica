@@ -10,6 +10,8 @@ describe('Test de busqueda', () => {
     })     
     it('Busqueda simple'), () => {
         mainPage.clickarCampoBusqueda()
+        mainPage.escribirBusqueda('calzado')
+        mainPage.comprobarResultado('calzado de seguridad')
     }
     
   })
