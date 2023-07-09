@@ -2,16 +2,39 @@ export class MainPage{
     navegarPaginaPrincipal(){
         cy.visit('https://www.safeguru.com')
     }
+    /* Busquedas */
     clickarCampoBusqueda(){
         cy.get('.sc-eVZGIO > button').click()
     }
     escribirBusqueda(text){
-        cy.get('.sc-gBInCZ > .sc-bTTELM > .sc-jTjUTQ').type(text + {enter})
+        cy.get('.sc-gBInCZ > .sc-bTTELM > .sc-jTjUTQ').type(text).type("{enter}")
         
     }
-    comprobarResultado(text){
-        cy.get('.text-wrapper').contains(text)
+    comprobarResultadoBusqueda(text){
+        cy.wait(10000)  /* no me sale */
+        cy.get('[data-projection-id="120"] > a > .link-wrapper > .text-wrapper').contains(text)
     }
+    seleccionarProducto(){
+        cy.get('article[id="calzado-de-seguridad-toworkfor-brake"]').click();
+    }
+    abrirDesplegableTallaZapato(number){
+        cy.get('.sc-kLKKgF').click()
+        cy.get('.sc-eYGnOm > :nth-child(5)').contains(number).click()
+        cy.get('button[name="Add unit"]').click() /* no funciona */
+        
+    }
+    tramitarPedido(email, pass){
+        cy.get('button.btn--add-to-bag').click()
+        cy.get('.bag-Holder > button').click() /* ir a la cesta */
+        cy.get('.sc-fLcnxK').click()    /* boton tramitar compra */
+        cy.get('.sc-jNVCqq > .sc-bTTELM > .sc-jTjUTQ').type(email)
+        cy.get('.sc-jNVCqq > .sc-bTTELM > .sc-jTjUTQ').type(pass)
+        cy.get('.sc-jNVCqq > .sc-bTTELM > .input-pws-btn').click() /* ver contraseña oculta */
+          cy.get('#step-1-login-button').click() /* iniciar sesion */
+          cy.get('.user-header > p').click()   /* cerrar sesion */
+    }
+    
+    /* Login */
     clickCuenta(){
         cy.get('.nav-links > :nth-child(3) > a').click()
         
@@ -54,10 +77,6 @@ export class MainPage{
         cy.get('.nav-links > :nth-child(3) > button').click()
         cy.get(':nth-child(3) > .sc-jTjUTQ').type(number)
     } */ /* no me  funciona */
-
-    rellenarLoginContraseñaIncorrecta(pass){
-        cy.get('.sc-hixjlP > .ehrPVE > .sc-jTjUTQ').type(pass)
-    }
     clickOlvidarContraseña(){
         cy.get(':nth-child(4) > .sc-eZceyY').click()
     }
@@ -68,4 +87,11 @@ export class MainPage{
         cy.get('.sc-ddKZzx > .buttons > :nth-child(1)').click()
         cy.get('.sc-dYBPgv > .sc-lllmON').click()
     }
+    /* Catalogo */
+
+   /*  catalogoPaso1(){
+        cy.get(':nth-child(1) > .sc-29e58602-2 > .arrow-open').click();
+        //cy.get('.active > [data-projection-id="2"]').click() 
+        
+    } */
 }

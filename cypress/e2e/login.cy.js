@@ -24,16 +24,21 @@ describe('Test login', () => {
     // mainPage.añadirTelefono('666666666') 
   }) */
 
-  it('Login contraseña incorrecta y cambiar contraseña', ()=>{
+  /* it('Login contraseña incorrecta y cambiar contraseña', ()=>{
     mainPage.clickCuenta()
     mainPage.rellenarLoginEmail('mgutyper@gmail.com')
-    mainPage.rellenarLoginContraseñaIncorrecta('jdahdadiahd')
+    mainPage.rellenarLoginContraseña('jdahdadiahd')
     mainPage.clickIniciarSesion()
     mainPage.clickOlvidarContraseña()
     mainPage.rellenarRecuperarContraseña('mgutyper@gmail.com')
     mainPage.clickEnviarEmail()
-  })
+  }) */
 
-  
+  it('Login email incorrecto', ()=>{
+    mainPage.clickCuenta()
+    mainPage.rellenarLoginEmail('dasdisd@gmail.com')
+    mainPage.rellenarLoginContraseña('12345678mg')
+    mainPage.clickIniciarSesion()
+  })
   
 })

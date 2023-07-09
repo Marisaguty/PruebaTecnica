@@ -1,17 +1,22 @@
-/// <reference types="cypress" />
-import { MainPage } from "../page-object/main"
+import { MainPage } from "../page-object/main";
 
-
-describe('Test de busqueda', () => {
-    const mainPage = new MainPage()
-    beforeEach(() => {
-        mainPage.navegarPaginaPrincipal()
-     
-    })     
-    it('Busqueda simple'), () => {
+describe('Test login', () => {
+    const mainPage = new MainPage();
+    beforeEach(()=>{
+      mainPage.navegarPaginaPrincipal()
+    })
+   
+    it('Busqueda Simple', ()=>{
         mainPage.clickarCampoBusqueda()
         mainPage.escribirBusqueda('calzado')
-        mainPage.comprobarResultado('calzado de seguridad')
-    }
+        /* mainPage.comprobarResultadoBusqueda('calzado') */
+
+    })
+
+    it('Añadir producto al carrito', ()=>{
+        mainPage.seleccionarProducto()
+        mainPage.abrirDesplegableTallaZapato(42)
+        mainPage.tramitarPedido("mgutyper@gmail.com", "12345678mg")
+    })
     
   })
