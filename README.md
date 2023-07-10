@@ -13,11 +13,6 @@ Para facilitarle el comienzo, aquí hay una lista de los siguientes pasos recome
 # Pre requisitos
 Instalar Node.js 
 
-$ npm init -y
-
-Instalar Cypress : $ npm install cypress
-
-
 # Primeros pasos e instalación
 -Clonar el proyecto en su máquina local
 
