@@ -2,6 +2,7 @@
 Descripción:
 
 Se trata de un proyecto que incluye la resolución de una prueba técnica como parte de un proceso de contratación. Los archivos incluidos en este proyecto tienen como objetivo resolver la implementación de casos de prueba web automatizados para la página de https://safeguru.com/ utilizando el framework Cypress.
+
 Los casos de prueba son : 
 - Registrarse como usuario y su comprobación
 - Loguearse correctamente, loguearse incorrectamente con email y contraseña incorrectos y cambiar contraseña.
