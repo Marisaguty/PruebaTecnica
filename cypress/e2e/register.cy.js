@@ -15,7 +15,7 @@ describe("Test register", () => {
     loginPage.clickRegistrar();
     registerPage.rellenarNombre("Marisa");
     registerPage.rellenarApellido("Gutierrez");
-    registerPage.rellenarEmail("example@gmail.com");
+    registerPage.rellenarEmail("example2@gmail.com");
     registerPage.rellenarContraseña("12345678mg");
     registerPage.clickPoliticaPrivacidad();
     registerPage.clickContinuar();

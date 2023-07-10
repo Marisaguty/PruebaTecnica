@@ -40,7 +40,7 @@ describe("Test login", () => {
 
   it("Cambiar contraseña", () => {
     loginPage.clickOlvidarContraseña();
-    loginPage.rellenarRecuperarContraseña("example@gmail.com");
+    loginPage.rellenarRecuperarContraseña("example2@gmail.com");
     loginPage.clickEnviarEmail();
   });
 });
