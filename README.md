@@ -8,6 +8,7 @@ Los casos de prueba son :
 - Loguearse correctamente, loguearse incorrectamente con email y contraseña incorrectos y cambiar contraseña.
 - Busqueda simple de un artículo y su comprobación
 - Añadir al carrito un producto y su comprobación
+  
 Para facilitarle el comienzo, aquí hay una lista de los siguientes pasos recomendados.
 
 # Pre requisitos
