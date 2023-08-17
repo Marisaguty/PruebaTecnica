@@ -11,10 +11,10 @@ Los casos de prueba son :
   
 Para facilitarle el comienzo, aquí hay una lista de los siguientes pasos recomendados.
 
-# Pre requisitos
+## Pre requisitos
 Instalar Node.js 
 
-# Primeros pasos e instalación
+## Primeros pasos e instalación
 -Clonar el proyecto en su máquina local
 
 https://github.com/Marisaguty/PruebaTecnica.git
@@ -23,10 +23,10 @@ https://github.com/Marisaguty/PruebaTecnica.git
 
 $ npm i 
 
-# Prueba en máquina local
+## Prueba en máquina local
 $ npm run cypress:runner
 
 $ npm run cypress:execution
 
-# Autor del proyecto
+## Autor del proyecto
 Marisa Gutiérrez
